@@ -1,0 +1,1919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy vs. Build in CRE — The AI Era Decision Framework</title>
+  <meta name="description" content="A thought leadership platform helping corporate real estate leaders decide when to buy, configure, augment, build, or wait on AI-era technology." />
+  <style>
+    /* ── Reset & Base ───────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:      #0b1120;
+      --navy-mid:  #111d35;
+      --navy-card: #162040;
+      --navy-border: #1e2f52;
+      --gold:      #c9a84c;
+      --gold-light:#e5c97e;
+      --gold-dim:  #8a6e30;
+      --slate:     #8494b2;
+      --slate-lt:  #b0bed4;
+      --white:     #f4f6fb;
+      --off-white: #dde3ef;
+      --accent:    #3a7bd5;
+      --accent-lt: #5a9af0;
+      --red:       #e05c5c;
+      --green:     #4caf88;
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-serif: Georgia, 'Times New Roman', serif;
+
+      --radius-sm: 6px;
+      --radius:    12px;
+      --radius-lg: 20px;
+
+      --max-w: 1180px;
+      --section-gap: 100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.65;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Typography ─────────────────────────────────────────── */
+    h1, h2, h3, h4 { line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+    h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); }
+    h4 { font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    p { color: var(--slate-lt); }
+    a { color: inherit; text-decoration: none; }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .gold { color: var(--gold); }
+    .accent { color: var(--accent-lt); }
+
+    /* ── Layout ─────────────────────────────────────────────── */
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    section { padding: var(--section-gap) 0; }
+
+    /* ── Divider ─────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--navy-border), transparent);
+      margin: 0 32px;
+    }
+
+    /* ── Buttons ─────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid var(--navy-border);
+    }
+    .btn-outline:hover { border-color: var(--gold-dim); color: var(--gold); background: rgba(201,168,76,0.05); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--slate-lt);
+      padding: 10px 0;
+      font-size: 0.9rem;
+    }
+    .btn-ghost:hover { color: var(--gold); }
+    .btn-ghost .arrow { transition: transform 0.2s; }
+    .btn-ghost:hover .arrow { transform: translateX(4px); }
+
+    /* ── Nav ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(11,17,32,0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--navy-border);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 32px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+      background: var(--gold);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--slate-lt);
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 8px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--gold-light); color: var(--navy); }
+    .nav-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    /* ── Hero ────────────────────────────────────────────────── */
+    #hero {
+      padding-top: 160px;
+      padding-bottom: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--navy-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--navy-border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.25;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 0%, transparent 100%);
+    }
+    .hero-glow {
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 500px;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      max-width: 820px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 100px;
+      padding: 6px 14px 6px 8px;
+      margin-bottom: 32px;
+    }
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+    .hero-badge span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold-light);
+    }
+    #hero h1 {
+      margin-bottom: 28px;
+    }
+    #hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--slate-lt);
+      max-width: 600px;
+      margin-bottom: 44px;
+      line-height: 1.7;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .hero-social-proof {
+      margin-top: 64px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .hero-proof-text {
+      font-size: 0.8rem;
+      color: var(--slate);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .hero-proof-logos {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .proof-logo {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--slate);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Stats bar ───────────────────────────────────────────── */
+    .stats-bar {
+      background: var(--navy-card);
+      border-top: 1px solid var(--navy-border);
+      border-bottom: 1px solid var(--navy-border);
+      padding: 40px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 16px 32px;
+      position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 20%; bottom: 20%;
+      width: 1px;
+      background: var(--navy-border);
+    }
+    .stat-num {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.04em;
+      display: block;
+    }
+    .stat-num .unit { color: var(--gold); }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--slate);
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    /* ── Thesis ──────────────────────────────────────────────── */
+    #thesis {
+      padding: var(--section-gap) 0;
+    }
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .thesis-left h2 {
+      margin-bottom: 24px;
+    }
+    .thesis-left p {
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+    .thesis-right {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .thesis-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .thesis-card:hover { border-color: var(--gold-dim); }
+    .thesis-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .thesis-card-body h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .thesis-card-body p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .icon-red   { background: rgba(224,92,92,0.12);  color: var(--red); }
+    .icon-gold  { background: rgba(201,168,76,0.12); color: var(--gold); }
+    .icon-blue  { background: rgba(58,123,213,0.12); color: var(--accent-lt); }
+    .icon-green { background: rgba(76,175,136,0.12); color: var(--green); }
+
+    /* ── Framework ───────────────────────────────────────────── */
+    #framework {
+      padding: var(--section-gap) 0;
+      background: linear-gradient(180deg, transparent 0%, rgba(22,32,64,0.4) 50%, transparent 100%);
+    }
+    .framework-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 60px;
+    }
+    .framework-header h2 { margin-bottom: 16px; }
+    .framework-header p { font-size: 1.05rem; }
+
+    .paths-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .path-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .path-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .path-card.active, .path-card:hover {
+      border-color: var(--path-color, var(--gold-dim));
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
+    .path-card.active::before, .path-card:hover::before { opacity: 1; }
+
+    .path-buy   { --path-color: #4caf88; }
+    .path-buy::before   { background: #4caf88; }
+    .path-config { --path-color: #3a7bd5; }
+    .path-config::before { background: #3a7bd5; }
+    .path-aug   { --path-color: #c9a84c; }
+    .path-aug::before   { background: #c9a84c; }
+    .path-build { --path-color: #e05c5c; }
+    .path-build::before { background: #e05c5c; }
+    .path-wait  { --path-color: #8494b2; }
+    .path-wait::before  { background: #8494b2; }
+
+    .path-number {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--slate);
+      margin-bottom: 16px;
+    }
+    .path-icon {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+    .path-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .path-card p {
+      font-size: 0.82rem;
+      line-height: 1.55;
+    }
+    .path-tag {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      background: rgba(255,255,255,0.07);
+      color: var(--slate-lt);
+    }
+
+    .path-detail {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      display: none;
+    }
+    .path-detail.visible { display: block; }
+    .path-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px;
+    }
+    .path-detail h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+    .path-detail-section h4 {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .path-detail-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .path-detail-section ul li {
+      font-size: 0.875rem;
+      color: var(--slate-lt);
+      padding-left: 16px;
+      position: relative;
+    }
+    .path-detail-section ul li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--slate);
+    }
+
+    /* ── Insights ────────────────────────────────────────────── */
+    #insights {
+      padding: var(--section-gap) 0;
+    }
+    .insights-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 48px;
+    }
+    .insights-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 24px;
+    }
+    .insight-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .insight-card:hover {
+      border-color: var(--gold-dim);
+      transform: translateY(-3px);
+    }
+    .insight-card-img {
+      height: 220px;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      position: relative;
+    }
+    .insight-card-img-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+    }
+    .insight-card-body {
+      padding: 24px 28px;
+    }
+    .insight-card-meta {
+      font-size: 0.78rem;
+      color: var(--slate);
+      margin-bottom: 10px;
+    }
+    .insight-card h3 {
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    .insight-card p {
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+    .insight-card-footer {
+      padding: 0 28px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .insight-read-time {
+      font-size: 0.75rem;
+      color: var(--slate);
+    }
+
+    .insight-sm .insight-card-img { height: 140px; }
+    .insight-sm .insight-card-body { padding: 20px 22px; }
+    .insight-sm .insight-card-footer { padding: 0 22px 18px; }
+    .insight-sm h3 { font-size: 0.95rem; }
+
+    /* Card gradient backgrounds */
+    .grad-1 { background: linear-gradient(135deg, #162040 0%, #0f3460 100%); }
+    .grad-2 { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); }
+    .grad-3 { background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%); }
+    .grad-4 { background: linear-gradient(135deg, #1a0533 0%, #270b52 100%); }
+
+    /* ── Assessment ──────────────────────────────────────────── */
+    #assessment {
+      padding: var(--section-gap) 0;
+    }
+    .assessment-wrapper {
+      background: linear-gradient(135deg, var(--navy-card) 0%, rgba(22,32,64,0.8) 100%);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .assessment-header {
+      padding: 48px 56px 40px;
+      border-bottom: 1px solid var(--navy-border);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+    .assessment-header h2 { margin-bottom: 12px; }
+    .assessment-header p { font-size: 1rem; max-width: 540px; }
+    .assessment-badge {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .assessment-badge-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .assessment-badge-label {
+      font-size: 0.75rem;
+      color: var(--slate);
+      letter-spacing: 0.06em;
+    }
+
+    .assessment-body {
+      padding: 48px 56px;
+    }
+    .assessment-progress-bar {
+      height: 4px;
+      background: var(--navy-border);
+      border-radius: 100px;
+      margin-bottom: 40px;
+      overflow: hidden;
+    }
+    .assessment-progress-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 100px;
+      transition: width 0.4s ease;
+    }
+
+    .assessment-question {
+      display: none;
+    }
+    .assessment-question.active {
+      display: block;
+    }
+    .aq-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .assessment-question h3 {
+      font-size: 1.25rem;
+      margin-bottom: 28px;
+      color: var(--white);
+    }
+    .aq-options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .aq-option {
+      background: var(--navy);
+      border: 1.5px solid var(--navy-border);
+      border-radius: var(--radius-sm);
+      padding: 16px 22px;
+      cursor: pointer;
+      transition: all 0.18s;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+    }
+    .aq-option:hover {
+      border-color: var(--gold-dim);
+      background: rgba(201,168,76,0.04);
+    }
+    .aq-option.selected {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+    .aq-option-key {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1.5px solid var(--navy-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: var(--slate);
+      transition: all 0.18s;
+    }
+    .aq-option.selected .aq-option-key {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+    .aq-option-text {
+      font-size: 0.92rem;
+      color: var(--slate-lt);
+      line-height: 1.4;
+    }
+    .aq-option.selected .aq-option-text { color: var(--white); }
+
+    .assessment-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+    }
+    .assessment-nav .step-info {
+      font-size: 0.8rem;
+      color: var(--slate);
+    }
+
+    .assessment-result {
+      display: none;
+    }
+    .assessment-result.active {
+      display: block;
+    }
+    .result-header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+    .result-path-badge {
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .result-path-label {
+      font-size: 0.75rem;
+      color: var(--slate);
+      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .result-path-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .result-body {
+      background: var(--navy);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    .result-body p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .result-signals {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .result-signal {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--slate-lt);
+    }
+    .result-signal-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .result-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Who It's For ────────────────────────────────────────── */
+    #for-whom {
+      padding: var(--section-gap) 0;
+    }
+    .for-whom-header {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 56px;
+    }
+    .for-whom-header h2 { margin-bottom: 16px; }
+    .personas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .persona-card {
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: border-color 0.2s;
+    }
+    .persona-card:hover { border-color: var(--gold-dim); }
+    .persona-icon {
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+    }
+    .persona-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .persona-org {
+      font-size: 0.8rem;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .persona-desc {
+      font-size: 0.875rem;
+      line-height: 1.65;
+    }
+    .persona-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+    .persona-tag {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: var(--navy);
+      border: 1px solid var(--navy-border);
+      color: var(--slate-lt);
+    }
+    .not-for {
+      margin-top: 40px;
+      background: var(--navy-card);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius);
+      padding: 24px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .not-for-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .not-for h4 {
+      font-size: 0.8rem;
+      color: var(--red);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .not-for p { font-size: 0.875rem; }
+
+    /* ── Final CTA ───────────────────────────────────────────── */
+    #cta {
+      padding: var(--section-gap) 0;
+    }
+    .cta-inner {
+      background: linear-gradient(135deg, #0f1e42 0%, #162040 50%, #0b1120 100%);
+      border: 1px solid var(--navy-border);
+      border-radius: var(--radius-lg);
+      padding: 72px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-glow {
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-inner h2 {
+      max-width: 600px;
+      margin: 0 auto 20px;
+      position: relative;
+    }
+    .cta-inner > p {
+      max-width: 480px;
+      margin: 0 auto 40px;
+      font-size: 1.05rem;
+      position: relative;
+    }
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .cta-footnote {
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: var(--slate);
+      position: relative;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--navy-border);
+      padding: 40px 0 32px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--slate);
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: var(--slate);
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .paths-grid { grid-template-columns: repeat(3, 1fr); }
+      .insights-grid { grid-template-columns: 1fr 1fr; }
+      .insight-card:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 860px) {
+      :root { --section-gap: 72px; }
+      .thesis-grid { grid-template-columns: 1fr; gap: 40px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .personas-grid { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .nav-menu-btn { display: block; }
+      .assessment-header { grid-template-columns: 1fr; }
+      .assessment-badge { display: none; }
+      .assessment-body, .assessment-header { padding: 32px 28px; }
+      .path-detail-grid { grid-template-columns: 1fr; }
+      .cta-inner { padding: 48px 32px; }
+    }
+    @media (max-width: 640px) {
+      .container { padding: 0 20px; }
+      .paths-grid { grid-template-columns: 1fr 1fr; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .insight-card:first-child { grid-column: auto; }
+      .personas-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .path-detail-grid { grid-template-columns: 1fr; gap: 20px; }
+      .result-signals { grid-template-columns: 1fr; }
+    }
+
+    /* ── Animations ──────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    .fade-up-1 { animation-delay: 0.05s; }
+    .fade-up-2 { animation-delay: 0.15s; }
+    .fade-up-3 { animation-delay: 0.25s; }
+    .fade-up-4 { animation-delay: 0.35s; }
+    .fade-up-5 { animation-delay: 0.45s; }
+  </style>
+</head>
+<body>
+
+<!-- ── Navigation ─────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">BB</div>
+      Buy vs. Build · CRE
+    </a>
+    <ul class="nav-links">
+      <li><a href="#thesis">The Thesis</a></li>
+      <li><a href="#framework">Framework</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#assessment">Assessment</a></li>
+      <li><a href="#cta" class="nav-cta">Get the Guide</a></li>
+    </ul>
+    <button class="nav-menu-btn" aria-label="Open menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge fade-up fade-up-1">
+        <div class="hero-badge-dot"></div>
+        <span>CRE Technology Leadership</span>
+      </div>
+      <h1 class="fade-up fade-up-2">
+        The AI Era Forces a New Answer to <em>Buy vs. Build</em>
+      </h1>
+      <p class="hero-sub fade-up fade-up-3">
+        For corporate real estate leaders navigating AI-era technology decisions,
+        the old binary no longer holds. There are five paths — and choosing the
+        wrong one has never been more expensive.
+      </p>
+      <div class="hero-actions fade-up fade-up-4">
+        <a href="#assessment" class="btn btn-primary">
+          Take the Assessment
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#framework" class="btn btn-outline">Explore the Framework</a>
+      </div>
+      <div class="hero-social-proof fade-up fade-up-5">
+        <span class="hero-proof-text">Perspectives from leaders at</span>
+        <div class="hero-proof-logos">
+          <div class="proof-logo">FORTUNE 100</div>
+          <div class="proof-logo">GLOBAL RE</div>
+          <div class="proof-logo">ENTERPRISE CRE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Stats bar ───────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">73<span class="unit">%</span></span>
+        <div class="stat-label">of CRE AI initiatives miss Year 1 ROI targets</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$4<span class="unit">M+</span></span>
+        <div class="stat-label">median cost of a failed internal build</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">18<span class="unit">mo</span></span>
+        <div class="stat-label">average time-to-value for misaligned path choices</div>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5</span>
+        <div class="stat-label">decision paths, each valid under different conditions</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Thesis ──────────────────────────────────────────────────── -->
+<section id="thesis">
+  <div class="container">
+    <div class="thesis-grid">
+      <div class="thesis-left">
+        <span class="eyebrow">The Core Argument</span>
+        <h2>The old binary was already wrong. AI makes the cost of getting it wrong catastrophic.</h2>
+        <p>For decades, corporate real estate organizations wrestled with a single question: do we buy technology off the shelf, or invest in building it ourselves? The answer usually came down to budget cycles and vendor relationships.</p>
+        <p>AI has shattered that simplicity. Vendors are wrapping AI capabilities around legacy platforms faster than buyers can evaluate them. Build projects require AI expertise that competes with Silicon Valley for talent. And the velocity of change means a decision made in Q1 can be obsolete by Q3.</p>
+        <p>The leaders who are winning aren't asking "buy or build?" — they're asking <strong style="color:var(--white)">"which of the five paths fits our actual situation right now?"</strong></p>
+        <a href="#framework" class="btn btn-ghost">
+          See the Five Paths <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="thesis-right">
+        <div class="thesis-card">
+          <div class="thesis-card-icon icon-red">⚡</div>
+          <div class="thesis-card-body">
+            <h4>The Velocity Problem</h4>
+            <p>Foundation models improve on 6–12 month cycles. Decisions anchored to today's capabilities age badly. Static vendor evaluations are already obsolete on signing day.</p>
+          </div>
+        </div>
+        <div class="thesis-card">
+          <div class="thesis-card-icon icon-gold">🏛️</div>
+          <div class="thesis-card-body">
+            <h4>The Moat Illusion</h4>
+            <p>CRE data is increasingly a commodity. The competitive advantage isn't owning proprietary data — it's the operational intelligence built on top of it. That changes the build calculus entirely.</p>
+          </div>
+        </div>
+        <div class="thesis-card">
+          <div class="thesis-card-icon icon-blue">🧩</div>
+          <div class="thesis-card-body">
+            <h4>The Integration Tax</h4>
+            <p>Most enterprise CRE stacks weren't designed for AI. Adding AI capability to brittle integrations multiplies technical debt faster than it creates value.</p>
+          </div>
+        </div>
+        <div class="thesis-card">
+          <div class="thesis-card-icon icon-green">⚖️</div>
+          <div class="thesis-card-body">
+            <h4>The Talent Equation</h4>
+            <p>Building in-house demands ML engineers, data scientists, and CRE domain experts simultaneously. That intersection is vanishingly rare and extraordinarily expensive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Framework ──────────────────────────────────────────────── -->
+<section id="framework">
+  <div class="container">
+    <div class="framework-header">
+      <span class="eyebrow">The Five-Path Framework</span>
+      <h2>Not buy vs. build. Five paths — each right for a different context.</h2>
+      <p>The decision isn't binary. Selecting the right path depends on your organization's data maturity, differentiation needs, talent, timeline, and risk tolerance. Click each path to explore it.</p>
+    </div>
+
+    <div class="paths-grid">
+      <div class="path-card path-buy active" data-path="buy" onclick="showPath('buy', this)">
+        <div class="path-number">PATH 01</div>
+        <div class="path-icon">🛒</div>
+        <h3>Buy</h3>
+        <p>Adopt a mature, proven platform with minimal configuration. The problem is solved; speed matters more than customization.</p>
+        <span class="path-tag">Fast to value</span>
+      </div>
+      <div class="path-card path-config" data-path="config" onclick="showPath('config', this)">
+        <div class="path-number">PATH 02</div>
+        <div class="path-icon">⚙️</div>
+        <h3>Configure</h3>
+        <p>Purchase an adaptable platform and invest in deep configuration to fit your processes and data model. Buy the engine; own the tuning.</p>
+        <span class="path-tag">Balanced control</span>
+      </div>
+      <div class="path-card path-aug" data-path="aug" onclick="showPath('aug', this)">
+        <div class="path-number">PATH 03</div>
+        <div class="path-icon">🔗</div>
+        <h3>Augment</h3>
+        <p>Extend an existing platform with custom AI layers built on top. You own the intelligence; a vendor owns the rails.</p>
+        <span class="path-tag">Best of both</span>
+      </div>
+      <div class="path-card path-build" data-path="build" onclick="showPath('build', this)">
+        <div class="path-number">PATH 04</div>
+        <div class="path-icon">🏗️</div>
+        <h3>Build</h3>
+        <p>Design and develop proprietary software from the ground up. Reserved for capabilities that are core to competitive advantage.</p>
+        <span class="path-tag">Maximum control</span>
+      </div>
+      <div class="path-card path-wait" data-path="wait" onclick="showPath('wait', this)">
+        <div class="path-number">PATH 05</div>
+        <div class="path-icon">⏳</div>
+        <h3>Wait</h3>
+        <p>Consciously defer the decision. Not indecision — a deliberate posture while the market matures or your readiness catches up.</p>
+        <span class="path-tag">Strategic patience</span>
+      </div>
+    </div>
+
+    <!-- Detail panels -->
+    <div class="path-detail visible" id="detail-buy">
+      <h3>🛒 Buy — Adopt the Market Standard</h3>
+      <div class="path-detail-grid">
+        <div class="path-detail-section">
+          <h4>Best When</h4>
+          <ul>
+            <li>The problem is solved by existing software</li>
+            <li>Your use case is non-differentiating</li>
+            <li>Speed to market outweighs customization</li>
+            <li>Your team lacks implementation capacity</li>
+            <li>Total cost of ownership favors SaaS</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>Watch Out For</h4>
+          <ul>
+            <li>Vendor lock-in at inflection points</li>
+            <li>AI features bolted on, not native</li>
+            <li>Pricing models that punish scale</li>
+            <li>Implementation complexity disguised as simplicity</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>CRE Examples</h4>
+          <ul>
+            <li>Lease abstraction AI tools</li>
+            <li>Market data / benchmarking platforms</li>
+            <li>Standard portfolio analytics</li>
+            <li>FM workflow automation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-detail" id="detail-config">
+      <h3>⚙️ Configure — Buy the Engine, Own the Tuning</h3>
+      <div class="path-detail-grid">
+        <div class="path-detail-section">
+          <h4>Best When</h4>
+          <ul>
+            <li>Strong platform exists but doesn't fit your processes out-of-box</li>
+            <li>Your data model is complex or proprietary</li>
+            <li>You have internal technical capacity</li>
+            <li>Vendor has strong extensibility / API ecosystem</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>Watch Out For</h4>
+          <ul>
+            <li>Configuration creep becoming a shadow build</li>
+            <li>Version upgrade conflicts destroying customizations</li>
+            <li>Hidden professional services costs</li>
+            <li>Over-engineering non-critical workflows</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>CRE Examples</h4>
+          <ul>
+            <li>IWMS platform configuration for portfolio complexity</li>
+            <li>Space utilization dashboards on sensor platforms</li>
+            <li>Transaction management workflow customization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-detail" id="detail-aug">
+      <h3>🔗 Augment — Own the Intelligence, Rent the Rails</h3>
+      <div class="path-detail-grid">
+        <div class="path-detail-section">
+          <h4>Best When</h4>
+          <ul>
+            <li>You have valuable proprietary data</li>
+            <li>Existing platforms lack native AI for your use case</li>
+            <li>You can access AI APIs / foundation models</li>
+            <li>The differentiation is in interpretation, not plumbing</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>Watch Out For</h4>
+          <ul>
+            <li>API dependency creating new vendor risk</li>
+            <li>Data pipeline fragility</li>
+            <li>Model drift without monitoring</li>
+            <li>Internal capability to maintain the AI layer</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>CRE Examples</h4>
+          <ul>
+            <li>AI deal scoring on top of CRM data</li>
+            <li>Portfolio optimization layer on IWMS</li>
+            <li>Occupancy prediction models on sensor feeds</li>
+            <li>LLM-powered lease Q&A on document stores</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-detail" id="detail-build">
+      <h3>🏗️ Build — Proprietary for Competitive Advantage</h3>
+      <div class="path-detail-grid">
+        <div class="path-detail-section">
+          <h4>Best When</h4>
+          <ul>
+            <li>The capability is a genuine competitive differentiator</li>
+            <li>No vendor can solve it adequately</li>
+            <li>You have (or can hire) the talent</li>
+            <li>Long-term ownership economics are superior</li>
+            <li>IP protection is strategically critical</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>Watch Out For</h4>
+          <ul>
+            <li>Underestimating maintenance burden</li>
+            <li>Confusing "different" with "proprietary advantage"</li>
+            <li>Talent risk after launch</li>
+            <li>Opportunity cost of engineering distraction</li>
+            <li>The moment vendors catch up</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>CRE Examples</h4>
+          <ul>
+            <li>Proprietary site selection models</li>
+            <li>Internal carbon / ESG analytics platforms</li>
+            <li>Custom portfolio scenario modeling</li>
+            <li>Broker-facing client intelligence tools</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="path-detail" id="detail-wait">
+      <h3>⏳ Wait — Strategic Patience Over Premature Commitment</h3>
+      <div class="path-detail-grid">
+        <div class="path-detail-section">
+          <h4>Best When</h4>
+          <ul>
+            <li>Market is nascent and vendor consolidation is imminent</li>
+            <li>Your data isn't ready for AI</li>
+            <li>Organizational change capacity is already maxed</li>
+            <li>The problem isn't urgent enough to absorb risk</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>Watch Out For</h4>
+          <ul>
+            <li>Wait becoming permanent inaction</li>
+            <li>Losing ground to peers who move first</li>
+            <li>Confusing uncertainty with infeasibility</li>
+            <li>Using "wait" to avoid a hard internal decision</li>
+          </ul>
+        </div>
+        <div class="path-detail-section">
+          <h4>How to Wait Well</h4>
+          <ul>
+            <li>Define the trigger conditions that end the wait</li>
+            <li>Invest in data foundation in the meantime</li>
+            <li>Run controlled pilots to reduce future uncertainty</li>
+            <li>Assign an owner to monitor the space</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Insights ────────────────────────────────────────────────── -->
+<section id="insights">
+  <div class="container">
+    <div class="insights-header">
+      <div>
+        <span class="eyebrow">Featured Insights</span>
+        <h2>Analysis for CRE decision-makers</h2>
+      </div>
+      <a href="#cta" class="btn btn-ghost">All insights <span class="arrow">→</span></a>
+    </div>
+
+    <div class="insights-grid">
+      <!-- Featured large -->
+      <div class="insight-card">
+        <div class="insight-card-img grad-1">
+          <span class="insight-card-img-label">Deep Dive</span>
+        </div>
+        <div class="insight-card-body">
+          <div class="insight-card-meta">Framework Analysis · March 2026</div>
+          <h3>Why 70% of CRE "Buy" Decisions Should Actually Be "Configure"</h3>
+          <p>Most enterprise real estate teams default to out-of-the-box deployment of new platforms — and pay for it in adoption failures, abandoned workflows, and data model debt that compounds for years. Here's the diagnostic that separates them.</p>
+        </div>
+        <div class="insight-card-footer">
+          <a href="#cta" class="btn btn-ghost" style="font-size:0.82rem;">Read analysis <span class="arrow">→</span></a>
+          <span class="insight-read-time">12 min read</span>
+        </div>
+      </div>
+
+      <!-- Small cards -->
+      <div class="insight-card insight-sm">
+        <div class="insight-card-img grad-3">
+          <span class="insight-card-img-label">Case Study</span>
+        </div>
+        <div class="insight-card-body">
+          <div class="insight-card-meta">Build Path · Feb 2026</div>
+          <h3>When a Global Occupier Built Its Own Site Selection AI — and Won</h3>
+          <p>A $40B portfolio, proprietary location data, and a vendor gap created the rare conditions where Build was right.</p>
+        </div>
+        <div class="insight-card-footer">
+          <a href="#cta" class="btn btn-ghost" style="font-size:0.82rem;">Read <span class="arrow">→</span></a>
+          <span class="insight-read-time">9 min</span>
+        </div>
+      </div>
+
+      <div class="insight-card insight-sm">
+        <div class="insight-card-img grad-4">
+          <span class="insight-card-img-label">Perspective</span>
+        </div>
+        <div class="insight-card-body">
+          <div class="insight-card-meta">Wait Path · Jan 2026</div>
+          <h3>The Case for Strategic Patience: Why "Wait" Is a Legitimate AI Strategy in CRE</h3>
+          <p>Not every organization should sprint toward AI adoption. Here's when patience is the highest-ROI move.</p>
+        </div>
+        <div class="insight-card-footer">
+          <a href="#cta" class="btn btn-ghost" style="font-size:0.82rem;">Read <span class="arrow">→</span></a>
+          <span class="insight-read-time">7 min</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Assessment ──────────────────────────────────────────────── -->
+<section id="assessment">
+  <div class="container">
+    <span class="eyebrow" style="text-align:center; display:block; margin-bottom:40px;">Flagship Tool</span>
+    <div class="assessment-wrapper">
+      <div class="assessment-header">
+        <div>
+          <h2>Which Path Is Right for Your Organization?</h2>
+          <p>Answer five questions about your specific situation. We'll map you to the path that fits your constraints — and explain why the others don't.</p>
+        </div>
+        <div class="assessment-badge">
+          <span class="assessment-badge-num">5</span>
+          <div class="assessment-badge-label">Questions<br>to your path</div>
+        </div>
+      </div>
+
+      <div class="assessment-body">
+        <div class="assessment-progress-bar">
+          <div class="assessment-progress-fill" id="progressFill" style="width: 20%"></div>
+        </div>
+
+        <!-- Q1 -->
+        <div class="assessment-question active" id="q1">
+          <div class="aq-label">Question 1 of 5</div>
+          <h3>What is the primary driver behind this technology decision?</h3>
+          <div class="aq-options">
+            <div class="aq-option" data-q="1" data-v="speed" onclick="selectOption(this)">
+              <div class="aq-option-key">A</div>
+              <div class="aq-option-text">We need a solution fast — competitive pressure or a deadline is driving us</div>
+            </div>
+            <div class="aq-option" data-q="1" data-v="diff" onclick="selectOption(this)">
+              <div class="aq-option-key">B</div>
+              <div class="aq-option-text">We want to create a capability competitors can't easily replicate</div>
+            </div>
+            <div class="aq-option" data-q="1" data-v="cost" onclick="selectOption(this)">
+              <div class="aq-option-key">C</div>
+              <div class="aq-option-text">We need to reduce operational cost or improve process efficiency</div>
+            </div>
+            <div class="aq-option" data-q="1" data-v="explore" onclick="selectOption(this)">
+              <div class="aq-option-key">D</div>
+              <div class="aq-option-text">We're exploring what's possible — not committed to a specific outcome yet</div>
+            </div>
+          </div>
+          <div class="assessment-nav">
+            <span class="step-info">Select an option to continue</span>
+            <button class="btn btn-primary" onclick="nextQuestion(2)" id="next1" disabled>Next →</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="assessment-question" id="q2">
+          <div class="aq-label">Question 2 of 5</div>
+          <h3>How would you describe your organization's proprietary data advantage?</h3>
+          <div class="aq-options">
+            <div class="aq-option" data-q="2" data-v="none" onclick="selectOption(this)">
+              <div class="aq-option-key">A</div>
+              <div class="aq-option-text">Similar to peers — we work with market-standard data sources</div>
+            </div>
+            <div class="aq-option" data-q="2" data-v="some" onclick="selectOption(this)">
+              <div class="aq-option-key">B</div>
+              <div class="aq-option-text">We have some unique data assets but they aren't well-organized yet</div>
+            </div>
+            <div class="aq-option" data-q="2" data-v="strong" onclick="selectOption(this)">
+              <div class="aq-option-key">C</div>
+              <div class="aq-option-text">Strong proprietary data — clean, labeled, and not available to vendors</div>
+            </div>
+            <div class="aq-option" data-q="2" data-v="unknown" onclick="selectOption(this)">
+              <div class="aq-option-key">D</div>
+              <div class="aq-option-text">We haven't audited this — our data maturity is a real concern</div>
+            </div>
+          </div>
+          <div class="assessment-nav">
+            <button class="btn btn-ghost" onclick="prevQuestion(1)">← Back</button>
+            <button class="btn btn-primary" onclick="nextQuestion(3)" id="next2" disabled>Next →</button>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="assessment-question" id="q3">
+          <div class="aq-label">Question 3 of 5</div>
+          <h3>What is your current internal technical capacity?</h3>
+          <div class="aq-options">
+            <div class="aq-option" data-q="3" data-v="low" onclick="selectOption(this)">
+              <div class="aq-option-key">A</div>
+              <div class="aq-option-text">Limited — IT is stretched thin and we depend heavily on vendors for implementation</div>
+            </div>
+            <div class="aq-option" data-q="3" data-v="mid" onclick="selectOption(this)">
+              <div class="aq-option-key">B</div>
+              <div class="aq-option-text">Moderate — we can manage platforms and do configuration, but not custom dev</div>
+            </div>
+            <div class="aq-option" data-q="3" data-v="high" onclick="selectOption(this)">
+              <div class="aq-option-key">C</div>
+              <div class="aq-option-text">Strong — we have engineers, data scientists, or an established tech function</div>
+            </div>
+            <div class="aq-option" data-q="3" data-v="building" onclick="selectOption(this)">
+              <div class="aq-option-key">D</div>
+              <div class="aq-option-text">We're actively building capacity — hiring underway, capability not yet proven</div>
+            </div>
+          </div>
+          <div class="assessment-nav">
+            <button class="btn btn-ghost" onclick="prevQuestion(2)">← Back</button>
+            <button class="btn btn-primary" onclick="nextQuestion(4)" id="next3" disabled>Next →</button>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="assessment-question" id="q4">
+          <div class="aq-label">Question 4 of 5</div>
+          <h3>What is the current state of the vendor market for this capability?</h3>
+          <div class="aq-options">
+            <div class="aq-option" data-q="4" data-v="mature" onclick="selectOption(this)">
+              <div class="aq-option-key">A</div>
+              <div class="aq-option-text">Mature — multiple credible vendors with proven implementations</div>
+            </div>
+            <div class="aq-option" data-q="4" data-v="emerging" onclick="selectOption(this)">
+              <div class="aq-option-key">B</div>
+              <div class="aq-option-text">Emerging — a few players exist but none are enterprise-ready yet</div>
+            </div>
+            <div class="aq-option" data-q="4" data-v="none" onclick="selectOption(this)">
+              <div class="aq-option-key">C</div>
+              <div class="aq-option-text">No real vendors — the capability doesn't exist in the market yet</div>
+            </div>
+            <div class="aq-option" data-q="4" data-v="unclear" onclick="selectOption(this)">
+              <div class="aq-option-key">D</div>
+              <div class="aq-option-text">Unclear — we haven't done a thorough market scan yet</div>
+            </div>
+          </div>
+          <div class="assessment-nav">
+            <button class="btn btn-ghost" onclick="prevQuestion(3)">← Back</button>
+            <button class="btn btn-primary" onclick="nextQuestion(5)" id="next4" disabled>Next →</button>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="assessment-question" id="q5">
+          <div class="aq-label">Question 5 of 5</div>
+          <h3>How would you characterize your organization's risk appetite for this decision?</h3>
+          <div class="aq-options">
+            <div class="aq-option" data-q="5" data-v="low" onclick="selectOption(this)">
+              <div class="aq-option-key">A</div>
+              <div class="aq-option-text">Conservative — we need proven technology with clear ROI evidence</div>
+            </div>
+            <div class="aq-option" data-q="5" data-v="moderate" onclick="selectOption(this)">
+              <div class="aq-option-key">B</div>
+              <div class="aq-option-text">Moderate — willing to take some risk for meaningful upside</div>
+            </div>
+            <div class="aq-option" data-q="5" data-v="high" onclick="selectOption(this)">
+              <div class="aq-option-key">C</div>
+              <div class="aq-option-text">High — we're willing to invest ahead of certainty to gain advantage</div>
+            </div>
+            <div class="aq-option" data-q="5" data-v="deferred" onclick="selectOption(this)">
+              <div class="aq-option-key">D</div>
+              <div class="aq-option-text">We'd rather wait and let others absorb the early risk</div>
+            </div>
+          </div>
+          <div class="assessment-nav">
+            <button class="btn btn-ghost" onclick="prevQuestion(4)">← Back</button>
+            <button class="btn btn-primary" onclick="showResult()" id="next5" disabled>See My Path →</button>
+          </div>
+        </div>
+
+        <!-- Result -->
+        <div class="assessment-result" id="result">
+          <div id="resultContent"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Who It's For ────────────────────────────────────────────── -->
+<section id="for-whom">
+  <div class="container">
+    <div class="for-whom-header">
+      <span class="eyebrow">Who This Is For</span>
+      <h2>Built for senior CRE decision-makers with real budget and real accountability</h2>
+    </div>
+
+    <div class="personas-grid">
+      <div class="persona-card">
+        <div class="persona-icon">🏢</div>
+        <div class="persona-title">Head of Corporate Real Estate</div>
+        <div class="persona-org">Fortune 500 Occupier</div>
+        <p class="persona-desc">Managing a portfolio of 5M+ sq ft across 30+ countries. Facing pressure from the CFO to demonstrate AI ROI while avoiding another failed technology implementation.</p>
+        <div class="persona-tags">
+          <span class="persona-tag">Portfolio strategy</span>
+          <span class="persona-tag">Vendor governance</span>
+          <span class="persona-tag">AI ROI</span>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">💼</div>
+        <div class="persona-title">VP Technology & Innovation</div>
+        <div class="persona-org">Global Real Estate Service Firm</div>
+        <p class="persona-desc">Responsible for the technology stack that brokers and clients depend on daily. Evaluating whether to build proprietary AI tools or deploy off-the-shelf platforms faster.</p>
+        <div class="persona-tags">
+          <span class="persona-tag">Proptech evaluation</span>
+          <span class="persona-tag">Build vs buy</span>
+          <span class="persona-tag">Client tools</span>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">📊</div>
+        <div class="persona-title">Chief Data Officer</div>
+        <div class="persona-org">REIT / Real Assets Manager</div>
+        <p class="persona-desc">Sitting at the intersection of real estate domain knowledge and data infrastructure. Determining what's worth building internally vs. buying from a rapidly evolving vendor market.</p>
+        <div class="persona-tags">
+          <span class="persona-tag">Data strategy</span>
+          <span class="persona-tag">AI readiness</span>
+          <span class="persona-tag">Platform architecture</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="not-for">
+      <div class="not-for-icon">🚫</div>
+      <div>
+        <h4>This Is Not For</h4>
+        <p>Residential real estate agents, individual investors, or organizations evaluating technology for the first time. This platform assumes senior decision-making authority, existing technology investments, and direct accountability for portfolio outcomes. If you're exploring CRE tech for the first time, start elsewhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── Final CTA ───────────────────────────────────────────────── -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-glow"></div>
+      <span class="eyebrow">Get the Full Picture</span>
+      <h2>The Complete Decision Guide: AI-Era Buy vs. Build for Corporate Real Estate</h2>
+      <p>The flagship guide covers all five paths in depth — with diagnostic criteria, case studies, common failure modes, and a decision matrix for your specific portfolio context.</p>
+      <div class="cta-actions">
+        <a href="#assessment" class="btn btn-primary" style="font-size:1rem; padding:16px 32px;">
+          Take the Full Assessment
+        </a>
+        <a href="#insights" class="btn btn-outline" style="font-size:1rem; padding:16px 32px;">
+          Read the Insights
+        </a>
+      </div>
+      <p class="cta-footnote">No email required to access the framework. The full guide is available on request.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ──────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">
+        © 2026 Buy vs. Build · CRE — A thought leadership platform for corporate real estate leaders
+      </div>
+      <div class="footer-links">
+        <a href="#thesis">Thesis</a>
+        <a href="#framework">Framework</a>
+        <a href="#insights">Insights</a>
+        <a href="#assessment">Assessment</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Framework path switcher ──────────────────────────────────
+  function showPath(path, el) {
+    document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.path-detail').forEach(d => d.classList.remove('visible'));
+    el.classList.add('active');
+    document.getElementById('detail-' + path).classList.add('visible');
+  }
+
+  // ── Assessment engine ─────────────────────────────────────────
+  const answers = {};
+  const totalQ = 5;
+
+  function selectOption(el) {
+    const q = el.dataset.q;
+    const v = el.dataset.v;
+    answers[q] = v;
+    document.querySelectorAll(`.aq-option[data-q="${q}"]`).forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    const nextBtn = document.getElementById('next' + q);
+    if (nextBtn) nextBtn.removeAttribute('disabled');
+  }
+
+  function nextQuestion(n) {
+    const prev = n - 1;
+    if (!answers[prev]) return;
+    document.getElementById('q' + prev).classList.remove('active');
+    document.getElementById('q' + n).classList.add('active');
+    document.getElementById('progressFill').style.width = ((n / totalQ) * 100) + '%';
+  }
+
+  function prevQuestion(n) {
+    const next = n + 1;
+    document.getElementById('q' + next).classList.remove('active');
+    document.getElementById('q' + n).classList.add('active');
+    document.getElementById('progressFill').style.width = ((n / totalQ) * 100) + '%';
+  }
+
+  function computePath() {
+    const a = answers;
+    let scores = { buy: 0, config: 0, aug: 0, build: 0, wait: 0 };
+
+    // Q1: primary driver
+    if (a[1] === 'speed') { scores.buy += 3; scores.config += 1; }
+    if (a[1] === 'diff')  { scores.build += 3; scores.aug += 2; }
+    if (a[1] === 'cost')  { scores.buy += 2; scores.config += 2; }
+    if (a[1] === 'explore') { scores.wait += 3; scores.aug += 1; }
+
+    // Q2: data advantage
+    if (a[2] === 'none')    { scores.buy += 3; scores.config += 1; }
+    if (a[2] === 'some')    { scores.config += 2; scores.aug += 2; }
+    if (a[2] === 'strong')  { scores.aug += 3; scores.build += 3; }
+    if (a[2] === 'unknown') { scores.wait += 2; scores.config += 1; }
+
+    // Q3: technical capacity
+    if (a[3] === 'low')      { scores.buy += 3; }
+    if (a[3] === 'mid')      { scores.config += 3; scores.aug += 1; }
+    if (a[3] === 'high')     { scores.build += 3; scores.aug += 2; }
+    if (a[3] === 'building') { scores.aug += 2; scores.wait += 1; scores.config += 1; }
+
+    // Q4: vendor market
+    if (a[4] === 'mature')   { scores.buy += 3; scores.config += 2; }
+    if (a[4] === 'emerging') { scores.config += 2; scores.aug += 2; scores.wait += 1; }
+    if (a[4] === 'none')     { scores.build += 3; scores.aug += 1; }
+    if (a[4] === 'unclear')  { scores.wait += 2; scores.config += 1; }
+
+    // Q5: risk appetite
+    if (a[5] === 'low')      { scores.buy += 2; scores.config += 1; }
+    if (a[5] === 'moderate') { scores.config += 2; scores.aug += 2; }
+    if (a[5] === 'high')     { scores.build += 2; scores.aug += 2; }
+    if (a[5] === 'deferred') { scores.wait += 3; }
+
+    return Object.entries(scores).sort((a,b) => b[1] - a[1])[0][0];
+  }
+
+  const pathData = {
+    buy: {
+      label: 'Buy',
+      color: '#4caf88',
+      bg: 'rgba(76,175,136,0.12)',
+      emoji: '🛒',
+      headline: 'Your Recommended Path: Buy',
+      summary: "Your profile points toward adopting an established, proven platform with minimal customization. Your situation — whether it's the maturity of the vendor market, your current technical capacity, or the speed of your timeline — suggests that investing in custom development would create more risk than value right now. The goal is to get to value quickly and preserve your organizational energy for higher-leverage decisions.",
+      signals: [
+        'Vendor market has mature, proven solutions',
+        'Speed to value is the primary constraint',
+        'Technical capacity is limited or stretched',
+        'Use case is not a genuine differentiator'
+      ]
+    },
+    config: {
+      label: 'Configure',
+      color: '#3a7bd5',
+      bg: 'rgba(58,123,213,0.12)',
+      emoji: '⚙️',
+      headline: 'Your Recommended Path: Configure',
+      summary: "You're a strong candidate for deep platform configuration. A capable vendor platform exists that can serve as your foundation — but out-of-the-box won't fit. Your data model, process complexity, or organizational requirements justify investing in serious configuration and adaptation. Buy the engine; own the tuning. This path gives you speed-to-market without sacrificing fit.",
+      signals: [
+        'Capable platforms exist but don\'t fit your workflows',
+        'You have moderate internal technical capacity',
+        'Data model is complex or has unique characteristics',
+        'Customization need is real but not differentiating'
+      ]
+    },
+    aug: {
+      label: 'Augment',
+      color: '#c9a84c',
+      bg: 'rgba(201,168,76,0.12)',
+      emoji: '🔗',
+      headline: 'Your Recommended Path: Augment',
+      summary: "You have the ingredients for a powerful hybrid strategy: existing platforms or infrastructure, valuable proprietary data, and enough technical capability to build AI layers on top. You don't need to build the full stack — and you shouldn't. Focus your development investment on the intelligence layer that leverages your unique data. Let vendors handle the commodity plumbing.",
+      signals: [
+        'Proprietary data assets that vendors can\'t access',
+        'Existing infrastructure to build upon',
+        'Engineering capacity for targeted AI development',
+        'Differentiation is in interpretation, not plumbing'
+      ]
+    },
+    build: {
+      label: 'Build',
+      color: '#e05c5c',
+      bg: 'rgba(224,92,92,0.12)',
+      emoji: '🏗️',
+      headline: 'Your Recommended Path: Build',
+      summary: "Your profile suggests genuine conditions for proprietary development — a real competitive differentiator, proprietary data that vendors can't access, strong technical capacity, and a willingness to absorb the risk and timeline of a build. This is the rarest and most demanding path. Use it only if the differentiation is authentic, not assumed. The failure mode here is building something that vendors ship 18 months later.",
+      signals: [
+        'Genuine competitive differentiation at stake',
+        'No vendor can adequately solve the problem',
+        'Strong internal technical capacity',
+        'High risk appetite with long-term ownership economics'
+      ]
+    },
+    wait: {
+      label: 'Wait',
+      color: '#8494b2',
+      bg: 'rgba(132,148,178,0.12)',
+      emoji: '⏳',
+      headline: 'Your Recommended Path: Strategic Patience',
+      summary: "Your situation — whether it's data unreadiness, market immaturity, organizational capacity, or risk posture — points toward deliberate deferral. This isn't a failure. Waiting is a valid strategic path when executed intentionally. Define what conditions would end the wait, invest in your data foundation in the interim, and assign accountability to monitor the space. Don't let waiting become drift.",
+      signals: [
+        'Market is nascent or consolidating',
+        'Data foundation isn\'t ready for AI',
+        'Organizational change capacity is constrained',
+        'Risk appetite favors letting others absorb early risk'
+      ]
+    }
+  };
+
+  function showResult() {
+    if (!answers[5]) return;
+    const path = computePath();
+    const data = pathData[path];
+
+    document.querySelectorAll('.assessment-question').forEach(q => q.classList.remove('active'));
+    document.getElementById('progressFill').style.width = '100%';
+
+    const resultHtml = `
+      <div class="result-header">
+        <div class="result-path-badge" style="background:${data.bg}; color:${data.color};">
+          ${data.emoji} ${data.label}
+        </div>
+        <div>
+          <div class="result-path-label">Your Recommended Path</div>
+          <div class="result-path-name">${data.headline.replace('Your Recommended Path: ', '')}</div>
+        </div>
+      </div>
+      <div class="result-body">
+        <p>${data.summary}</p>
+        <div class="result-signals">
+          ${data.signals.map(s => `
+            <div class="result-signal">
+              <div class="result-signal-dot" style="background:${data.color}"></div>
+              ${s}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+      <div class="result-actions">
+        <a href="#framework" class="btn btn-primary">Explore the ${data.label} Path in Detail</a>
+        <button class="btn btn-outline" onclick="resetAssessment()">Retake Assessment</button>
+      </div>
+      <p style="margin-top:16px; font-size:0.78rem; color:var(--slate);">
+        This is a directional signal, not a prescription. The full guide explores nuance, edge cases, and hybrid approaches.
+      </p>
+    `;
+
+    document.getElementById('resultContent').innerHTML = resultHtml;
+    document.getElementById('result').classList.add('active');
+    document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function resetAssessment() {
+    Object.keys(answers).forEach(k => delete answers[k]);
+    document.querySelectorAll('.aq-option').forEach(o => o.classList.remove('selected'));
+    document.querySelectorAll('[id^="next"]').forEach(b => b.setAttribute('disabled', ''));
+    document.getElementById('result').classList.remove('active');
+    document.getElementById('resultContent').innerHTML = '';
+    document.getElementById('q1').classList.add('active');
+    document.getElementById('progressFill').style.width = '20%';
+  }
+
+  // ── Scroll animations ─────────────────────────────────────────
+  const observerOpts = { threshold: 0.12 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        observer.unobserve(e.target);
+      }
+    });
+  }, observerOpts);
+
+  document.querySelectorAll('.thesis-card, .path-card, .insight-card, .persona-card, .stat-item').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(18px)';
+    el.style.transition = `opacity 0.5s ease ${i * 0.07}s, transform 0.5s ease ${i * 0.07}s`;
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
