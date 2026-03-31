@@ -249,6 +249,40 @@
       cursor: pointer;
       padding: 4px;
     }
+    .mobile-menu {
+      position: fixed;
+      top: 60px;
+      left: 20px;
+      right: 20px;
+      z-index: 110;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border-mid);
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+      padding: 14px;
+      display: none;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a {
+      display: block;
+      padding: 14px 12px;
+      color: var(--text-1);
+      font-size: 0.98rem;
+      font-weight: 500;
+      border-radius: 10px;
+    }
+    .mobile-menu a:hover {
+      background: var(--bg-subtle);
+    }
+    .mobile-menu .mobile-cta {
+      margin-top: 6px;
+      background: var(--text-1);
+      color: #fff;
+      text-align: center;
+      font-weight: 600;
+    }
 
     /* ── Hero ────────────────────────────────────────────────── */
     #hero {
@@ -1178,13 +1212,21 @@
       <li><a href="#assessment">Assessment</a></li>
       <li><a href="#cta" class="nav-cta">Get the Guide</a></li>
     </ul>
-    <button class="nav-menu-btn" aria-label="Open menu">
+    <button class="nav-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" onclick="toggleMobileMenu()">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
       </svg>
     </button>
   </div>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#thesis" onclick="closeMobileMenu()">Thesis</a>
+  <a href="#framework" onclick="closeMobileMenu()">Framework</a>
+  <a href="#agents" onclick="closeMobileMenu()">Agents</a>
+  <a href="#insights" onclick="closeMobileMenu()">Insights</a>
+  <a href="#assessment" onclick="closeMobileMenu()">Assessment</a>
+  <a href="#cta" class="mobile-cta" onclick="closeMobileMenu()">Get the Guide</a>
+</div>
 
 <!-- ── Hero ──────────────────────────────────────────────────── -->
 <section id="hero">
@@ -2206,6 +2248,32 @@
     document.getElementById('q1').classList.add('active');
     document.getElementById('progressFill').style.width = '20%';
   }
+
+  // ── Mobile menu ───────────────────────────────────────────────
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.nav-menu-btn');
+    const isOpen = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  function closeMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.nav-menu-btn');
+    menu.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 860) closeMobileMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.nav-menu-btn');
+    if (!menu || !btn) return;
+    if (!menu.contains(e.target) && !btn.contains(e.target)) closeMobileMenu();
+  });
 
   // ── Scroll-in animations ──────────────────────────────────────
   const io = new IntersectionObserver((entries) => {
