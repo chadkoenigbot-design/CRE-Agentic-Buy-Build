@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bringing the Agentic Era to Life for CRE</title>
-  <meta name="description" content="A premium thought leadership platform exploring how corporate real estate leaders can bring the agentic era to life through smarter buy, build, configure, and augmentation decisions." />
+  <meta name="description" content="A thought leadership platform for corporate real estate leaders navigating buy, build, configure, and augment decisions in the age of agentic AI operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -12,27 +12,29 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:          #0a0a0f;
-      --bg-raised:   #111118;
-      --bg-subtle:   #17171f;
-      --border:      rgba(255,255,255,0.07);
-      --border-mid:  rgba(255,255,255,0.12);
-      --border-hi:   rgba(255,255,255,0.18);
+      --bg:          #fafaf8;
+      --bg-raised:   #ffffff;
+      --bg-subtle:   #f3f2ef;
+      --bg-deep:     #eceae5;
 
-      --text-1:  #f0f0f5;
-      --text-2:  rgba(240,240,245,0.62);
-      --text-3:  rgba(240,240,245,0.36);
+      --border:      rgba(0,0,0,0.07);
+      --border-mid:  rgba(0,0,0,0.13);
+      --border-hi:   rgba(0,0,0,0.22);
 
-      --gold:        #c9a84c;
-      --gold-mid:    rgba(201,168,76,0.45);
-      --gold-subtle: rgba(201,168,76,0.1);
-      --gold-glow:   rgba(201,168,76,0.15);
+      --text-1:  #111110;
+      --text-2:  rgba(17,17,16,0.62);
+      --text-3:  rgba(17,17,16,0.38);
 
-      --green:  #34c759;
-      --blue:   #3a7bd5;
-      --amber:  #f5a623;
-      --red:    #e05c5c;
-      --slate:  #8e8e9a;
+      --gold:        #a87b20;
+      --gold-mid:    rgba(168,123,32,0.38);
+      --gold-subtle: rgba(168,123,32,0.08);
+      --gold-glow:   rgba(168,123,32,0.12);
+
+      --green:  #197b3a;
+      --blue:   #1c5fa8;
+      --amber:  #c47d12;
+      --red:    #b83c3c;
+      --slate:  #6b6b78;
 
       --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -131,9 +133,9 @@
       color: var(--bg);
     }
     .btn-primary:hover {
-      background: #fff;
+      background: #000;
       transform: translateY(-1px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     }
     .btn-outline {
       background: transparent;
@@ -142,17 +144,17 @@
     }
     .btn-outline:hover {
       border-color: var(--border-hi);
-      background: rgba(255,255,255,0.04);
+      background: rgba(0,0,0,0.04);
     }
     .btn-gold {
       background: var(--gold);
-      color: var(--bg);
+      color: #fff;
       font-weight: 700;
     }
     .btn-gold:hover {
-      background: #d9ba5c;
+      background: #8f6a18;
       transform: translateY(-1px);
-      box-shadow: 0 8px 28px rgba(201,168,76,0.25);
+      box-shadow: 0 8px 28px rgba(168,123,32,0.22);
     }
     .link-arrow {
       font-size: 0.9rem;
@@ -175,13 +177,14 @@
       height: 60px;
       display: flex;
       align-items: center;
-      transition: background 0.3s, border-color 0.3s;
+      transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     }
     nav.scrolled {
-      background: rgba(10,10,15,0.88);
+      background: rgba(250,250,248,0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
     }
     .nav-inner {
       max-width: var(--max-w);
@@ -210,7 +213,7 @@
       place-items: center;
       font-size: 0.62rem;
       font-weight: 800;
-      color: var(--bg);
+      color: #fff;
       letter-spacing: 0;
     }
     .nav-links {
@@ -230,14 +233,14 @@
     .nav-cta {
       font-size: 0.82rem;
       font-weight: 600;
-      color: var(--bg);
+      color: #fff;
       background: var(--text-1);
       padding: 7px 18px;
       border-radius: var(--r-sm);
       transition: background 0.15s;
       letter-spacing: -0.01em;
     }
-    .nav-cta:hover { background: #fff; color: var(--bg); }
+    .nav-cta:hover { background: #000; color: #fff; }
     .nav-menu-btn {
       display: none;
       background: none;
@@ -257,7 +260,7 @@
     .hero-gradient {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%);
+      background: radial-gradient(ellipse 80% 55% at 50% 0%, rgba(168,123,32,0.06) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-content {
@@ -297,6 +300,7 @@
     .metrics-strip {
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      background: var(--bg-subtle);
       padding: 48px 0;
     }
     .metrics-grid {
@@ -398,7 +402,7 @@
       border-radius: var(--r);
       padding: 24px 20px;
       cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
       position: relative;
       overflow: hidden;
     }
@@ -414,6 +418,7 @@
     .path-card:hover, .path-card.active {
       border-color: var(--border-mid);
       background: var(--bg-subtle);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
     .path-card.active::after, .path-card:hover::after { opacity: 1; }
 
@@ -450,8 +455,9 @@
       font-size: 0.67rem;
       font-weight: 600;
       letter-spacing: 0.04em;
-      background: rgba(255,255,255,0.05);
+      background: var(--bg-subtle);
       color: var(--text-3);
+      border: 1px solid var(--border);
     }
 
     .path-detail {
@@ -460,6 +466,7 @@
       border: 1px solid var(--border);
       border-radius: var(--r);
       padding: 36px 40px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
     }
     .path-detail.visible { display: block; }
     .path-detail > h3 {
@@ -609,9 +616,9 @@
       white-space: nowrap;
     }
     .agent-path-tag.augment { color: var(--gold); border-color: var(--gold-mid); }
-    .agent-path-tag.buy     { color: var(--green); border-color: rgba(52,199,89,0.35); }
-    .agent-path-tag.config  { color: var(--blue); border-color: rgba(58,123,213,0.4); }
-    .agent-path-tag.build   { color: var(--red); border-color: rgba(224,92,92,0.35); }
+    .agent-path-tag.buy     { color: var(--green); border-color: rgba(25,123,58,0.3); }
+    .agent-path-tag.config  { color: var(--blue); border-color: rgba(28,95,168,0.3); }
+    .agent-path-tag.build   { color: var(--red); border-color: rgba(184,60,60,0.3); }
     .agent-use-case > p {
       font-size: 0.87rem;
       line-height: 1.7;
@@ -684,12 +691,15 @@
       border: 1px solid var(--border);
       border-radius: var(--r);
       overflow: hidden;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
       cursor: pointer;
       display: flex;
       flex-direction: column;
     }
-    .insight-card:hover { border-color: var(--border-mid); }
+    .insight-card:hover {
+      border-color: var(--border-mid);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    }
     .insight-thumb {
       height: 200px;
       background: var(--bg-subtle);
@@ -705,9 +715,10 @@
       text-transform: uppercase;
       padding: 4px 10px;
       border-radius: 100px;
-      background: rgba(10,10,15,0.7);
+      background: rgba(250,250,248,0.85);
       backdrop-filter: blur(8px);
       color: var(--text-2);
+      border: 1px solid var(--border);
     }
     .insight-body {
       padding: 24px 26px;
@@ -752,6 +763,7 @@
       border: 1px solid var(--border);
       border-radius: var(--r-lg);
       overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
     }
     .assessment-top {
       padding: 44px 52px 40px;
@@ -760,11 +772,12 @@
       grid-template-columns: 1fr auto;
       gap: 32px;
       align-items: center;
+      background: var(--bg-subtle);
     }
     .assessment-top h2 { margin-bottom: 12px; }
     .assessment-top p { font-size: 1rem; max-width: 500px; }
     .assessment-count {
-      background: var(--gold-subtle);
+      background: var(--bg-raised);
       border: 1px solid var(--gold-mid);
       border-radius: var(--r);
       padding: 18px 28px;
@@ -838,7 +851,7 @@
     }
     .q-option:hover {
       border-color: var(--border-mid);
-      background: rgba(255,255,255,0.02);
+      background: rgba(0,0,0,0.02);
     }
     .q-option.selected {
       border-color: var(--gold);
@@ -860,7 +873,7 @@
     .q-option.selected .q-option-key {
       background: var(--gold);
       border-color: var(--gold);
-      color: var(--bg);
+      color: #fff;
     }
     .q-option-text {
       font-size: 0.9rem;
@@ -907,7 +920,7 @@
       color: var(--text-1);
     }
     .result-body {
-      background: var(--bg);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: var(--r);
       padding: 26px 30px;
@@ -958,9 +971,12 @@
       border: 1px solid var(--border);
       border-radius: var(--r);
       padding: 30px 26px;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .persona-card:hover { border-color: var(--border-mid); }
+    .persona-card:hover {
+      border-color: var(--border-mid);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
     .persona-role {
       font-size: 0.95rem;
       font-weight: 700;
@@ -988,7 +1004,7 @@
       font-size: 0.68rem;
       padding: 3px 9px;
       border-radius: 100px;
-      background: var(--bg);
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
       color: var(--text-3);
     }
@@ -1000,6 +1016,7 @@
       display: flex;
       gap: 16px;
       align-items: baseline;
+      background: var(--bg-subtle);
     }
     .not-for-label {
       font-size: 0.68rem;
@@ -1019,6 +1036,7 @@
     /* ── CTA ─────────────────────────────────────────────────── */
     #cta {
       padding: var(--pad) 0;
+      background: var(--bg-subtle);
     }
     .cta-block {
       text-align: center;
@@ -1033,7 +1051,7 @@
       transform: translateX(-50%);
       width: 500px;
       height: 200px;
-      background: radial-gradient(ellipse, rgba(201,168,76,0.08), transparent 70%);
+      background: radial-gradient(ellipse, rgba(168,123,32,0.1), transparent 70%);
       pointer-events: none;
     }
     .cta-block h2 {
@@ -1062,6 +1080,7 @@
     /* ── Footer ──────────────────────────────────────────────── */
     footer {
       border-top: 1px solid var(--border);
+      background: var(--bg-deep);
       padding: 36px 0 28px;
     }
     .footer-inner {
@@ -1223,10 +1242,10 @@
     <div class="thesis-layout">
       <div class="thesis-left">
         <span class="eyebrow">The Core Argument</span>
-        <h2>The old binary was already wrong. AI makes the cost of getting it wrong catastrophic.</h2>
+        <h2>The old binary was already wrong. Agentic AI raises the stakes from software selection to operations design.</h2>
         <p>For decades, corporate real estate organizations wrestled with a single question: buy technology off the shelf, or invest in building it ourselves? The answer usually came down to budget cycles and vendor relationships.</p>
-        <p>AI has shattered that simplicity. Vendors are wrapping AI capabilities around legacy platforms faster than buyers can evaluate them. Build projects require AI expertise that competes with Silicon Valley for talent. And the velocity of change means a decision made in Q1 can be obsolete by Q3.</p>
-        <p>The leaders who are winning aren't asking "buy or build?" — they're asking <strong style="color:var(--text-1); font-weight:600">"which of the five paths fits our actual situation right now?"</strong></p>
+        <p>Agentic AI has changed the nature of the decision entirely. The question is no longer just which software to use — it's how you design operations that agents can execute. Which workflows should agents own? Where do you retain human judgment? What does your architecture need to support autonomous multi-step action at scale? These are operations design questions, not procurement questions.</p>
+        <p>The leaders who are winning aren't asking "buy or build?" — they're asking <strong style="color:var(--text-1); font-weight:600">"which of the five paths positions us to operate agentically at scale?"</strong></p>
         <a href="#framework" class="link-arrow" style="margin-top: 20px; display:inline-flex;">
           See the Five Paths <span class="arr">→</span>
         </a>
@@ -1236,22 +1255,22 @@
           <div class="problem-item">
             <span class="problem-num">01</span>
             <h4>The Velocity Problem</h4>
-            <p>Foundation models improve on 6–12 month cycles. Decisions anchored to today's capabilities age badly. Static vendor evaluations are already obsolete on signing day.</p>
+            <p>Foundation models improve on 6–12 month cycles, and agentic frameworks are evolving just as fast. Decisions anchored to today's capabilities age badly — and decisions that don't account for agent architectures are already obsolete.</p>
           </div>
           <div class="problem-item">
             <span class="problem-num">02</span>
-            <h4>The Moat Illusion</h4>
-            <p>CRE data is increasingly a commodity. The competitive advantage isn't owning proprietary data — it's the operational intelligence built on top of it. That changes the build calculus entirely.</p>
+            <h4>The Operations Design Gap</h4>
+            <p>Choosing the right path is only half the decision. Agentic operations require workflow redesign, clear delegation boundaries, escalation paths, and feedback loops. Most CRE organizations don't yet have a framework for this — and most vendors won't design it for you.</p>
           </div>
           <div class="problem-item">
             <span class="problem-num">03</span>
             <h4>The Integration Tax</h4>
-            <p>Most enterprise CRE stacks weren't designed for AI. Adding AI capability to brittle integrations multiplies technical debt faster than it creates value.</p>
+            <p>Agentic systems demand clean APIs, structured data outputs, and reliable pipelines at every step. Legacy CRE stacks were designed for human-in-the-loop workflows. Adding agents to brittle integrations creates confident wrong actions, not just wrong answers.</p>
           </div>
           <div class="problem-item">
             <span class="problem-num">04</span>
-            <h4>The Talent Equation</h4>
-            <p>Building in-house demands ML engineers, data scientists, and CRE domain experts simultaneously. That intersection is vanishingly rare and extraordinarily expensive.</p>
+            <h4>The Moat Illusion</h4>
+            <p>CRE data is increasingly a commodity. The competitive advantage isn't owning proprietary data — it's the agentic workflows built on top of it. That changes the build calculus entirely, and shifts the ROI question from "what data do we have?" to "what can our agents do with it?"</p>
           </div>
         </div>
       </div>
@@ -1266,8 +1285,8 @@
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">The Five-Path Framework</span>
-      <h2>Five paths for bringing the agentic era to life in corporate real estate.</h2>
-      <p>The decision isn't binary. Selecting the right path depends on your data maturity, differentiation needs, talent, timeline, and risk tolerance. Select each path to explore it.</p>
+      <h2>Five paths for designing your agentic operations in corporate real estate.</h2>
+      <p>The decision isn't binary — and it isn't just about software. The path you choose determines how much control you retain over your agent layer: where agents live, what they can access, and how fast you can evolve them. Select each path to explore it.</p>
     </div>
 
     <div class="paths-row">
@@ -1319,10 +1338,10 @@
         <div class="detail-col">
           <h4>Watch Out For</h4>
           <ul>
-            <li>Vendor lock-in at inflection points</li>
-            <li>AI features bolted on, not native</li>
+            <li>Vendor lock-in at agentic inflection points</li>
+            <li>AI features bolted on, not native to the workflow</li>
             <li>Pricing models that punish scale</li>
-            <li>Implementation complexity disguised as simplicity</li>
+            <li>Agent capabilities you can't extend or retrain</li>
           </ul>
         </div>
         <div class="detail-col">
@@ -1355,7 +1374,7 @@
             <li>Configuration creep becoming a shadow build</li>
             <li>Version upgrade conflicts destroying customizations</li>
             <li>Hidden professional services costs</li>
-            <li>Over-engineering non-critical workflows</li>
+            <li>Agent orchestration locked inside the vendor's black box</li>
           </ul>
         </div>
         <div class="detail-col">
@@ -1376,25 +1395,25 @@
           <h4>Best When</h4>
           <ul>
             <li>You have valuable proprietary data</li>
-            <li>Existing platforms lack native AI for your use case</li>
+            <li>Existing platforms lack native agentic capability for your use case</li>
             <li>You can access AI APIs and foundation models</li>
-            <li>The differentiation is in interpretation, not plumbing</li>
+            <li>The differentiation is in the agent layer, not the plumbing</li>
           </ul>
         </div>
         <div class="detail-col">
           <h4>Watch Out For</h4>
           <ul>
             <li>API dependency creating new vendor risk</li>
-            <li>Data pipeline fragility</li>
+            <li>Data pipeline fragility under agentic load</li>
             <li>Model drift without monitoring</li>
-            <li>Internal capability to maintain the AI layer</li>
+            <li>Internal capacity to maintain and evolve the agent layer</li>
           </ul>
         </div>
         <div class="detail-col">
           <h4>CRE Examples</h4>
           <ul>
             <li>AI deal scoring on top of CRM data</li>
-            <li>Portfolio optimization layer on IWMS</li>
+            <li>Portfolio optimization agent on IWMS</li>
             <li>Occupancy prediction models on sensor feeds</li>
             <li>LLM-powered lease Q&amp;A on document stores</li>
           </ul>
@@ -1410,7 +1429,7 @@
           <ul>
             <li>The capability is a genuine competitive differentiator</li>
             <li>No vendor can solve it adequately</li>
-            <li>You have or can hire the talent</li>
+            <li>You have or can hire the talent — including agent orchestration expertise</li>
             <li>Long-term ownership economics are superior</li>
             <li>IP protection is strategically critical</li>
           </ul>
@@ -1418,11 +1437,10 @@
         <div class="detail-col">
           <h4>Watch Out For</h4>
           <ul>
-            <li>Underestimating maintenance burden</li>
+            <li>Underestimating the maintenance burden of agentic systems</li>
             <li>Confusing "different" with "proprietary advantage"</li>
             <li>Talent risk after launch</li>
-            <li>Opportunity cost of engineering distraction</li>
-            <li>The moment vendors catch up</li>
+            <li>The moment vendors ship a credible agentic equivalent</li>
           </ul>
         </div>
         <div class="detail-col">
@@ -1444,7 +1462,7 @@
           <h4>Best When</h4>
           <ul>
             <li>Market is nascent and vendor consolidation is imminent</li>
-            <li>Your data isn't ready for AI</li>
+            <li>Your data isn't ready for agentic workflows</li>
             <li>Organizational change capacity is already maxed</li>
             <li>The problem isn't urgent enough to absorb risk</li>
           </ul>
@@ -1453,7 +1471,7 @@
           <h4>Watch Out For</h4>
           <ul>
             <li>Wait becoming permanent inaction</li>
-            <li>Losing ground to peers who move first</li>
+            <li>Losing ground to peers building agentic operations now</li>
             <li>Confusing uncertainty with infeasibility</li>
             <li>Using "wait" to avoid a hard internal decision</li>
           </ul>
@@ -1462,9 +1480,9 @@
           <h4>How to Wait Well</h4>
           <ul>
             <li>Define the trigger conditions that end the wait</li>
-            <li>Invest in data foundation in the meantime</li>
+            <li>Invest in data and API foundations in the meantime</li>
             <li>Run controlled pilots to reduce future uncertainty</li>
-            <li>Assign an owner to monitor the space</li>
+            <li>Assign an owner to monitor the agentic landscape</li>
           </ul>
         </div>
       </div>
@@ -1481,18 +1499,18 @@
 
     <div class="agents-intro">
       <span class="eyebrow">The Agentic Frontier</span>
-      <h2>Where Agents Create Value in Enterprise CRE</h2>
-      <p>The most consequential near-term application of AI in CRE isn't a dashboard or a chat interface — it's autonomous agents embedded in core workflows. Agents don't just analyze; they act, coordinate, and complete multi-step tasks without human intervention at each step.</p>
-      <p>For enterprise CRE teams operating at scale — managing hundreds of leases, dozens of transactions, thousands of service requests — agents can multiply team capacity in ways that traditional software cannot. The question isn't whether agentic AI will transform CRE operations. It's whether your organization is positioned to direct that transformation or react to it.</p>
+      <h2>Where Agents Create Value in Enterprise CRE — and How Your Path Shapes Your Options</h2>
+      <p>The most consequential near-term application of AI in CRE isn't a dashboard or a chat interface — it's autonomous agents embedded in core workflows. Agents don't just analyze; they act, coordinate, and complete multi-step tasks without human intervention at each step. That's an operations design challenge, not a feature selection challenge.</p>
+      <p>The path you choose — buy, configure, augment, or build — determines the degree of control you have over your agent layer: where agents can reach, what they can act on, and how fast you can evolve them as your operations mature. Treating the buy/build decision as separate from the agentic operations decision is the most common planning failure in enterprise CRE technology today.</p>
 
       <div class="agents-why-now">
         <div class="why-now-cell">
           <h4>Why the readiness gap is closing</h4>
-          <p>Foundation models now handle complex, multi-step CRE tasks — lease clause interpretation, market data synthesis, financial variance analysis — with accuracy approaching senior analyst quality. The tooling to orchestrate agents has matured significantly in the past 18 months. Early experiments are becoming production systems.</p>
+          <p>Foundation models now handle complex, multi-step CRE tasks — lease clause interpretation, market data synthesis, financial variance analysis — with accuracy approaching senior analyst quality. Agent orchestration frameworks have matured significantly. Early experiments are becoming production systems, and the operational patterns are becoming clear.</p>
         </div>
         <div class="why-now-cell">
           <h4>Why the cost of waiting is rising</h4>
-          <p>CRE teams that establish agentic workflows now will accumulate institutional knowledge — refined prompts, validated data pipelines, tuned decision criteria — that compounds over time. Organizations that wait will find themselves playing catch-up against peers who have 12–24 months of operational learning built in.</p>
+          <p>CRE teams that establish agentic workflows now accumulate institutional knowledge — refined prompts, validated pipelines, tuned decision criteria — that compounds over time. Organizations that wait will find themselves playing catch-up against peers who have 12–24 months of operational learning built in and can't be easily replicated.</p>
         </div>
       </div>
     </div>
@@ -1678,32 +1696,32 @@
 
     <!-- Practical principles -->
     <div class="agents-practical">
-      <h3>Five Principles for Bringing Agents to Life</h3>
+      <h3>Five Principles for Designing Agentic Operations</h3>
       <div class="practical-principles">
         <div class="principle">
           <span class="principle-num">01</span>
           <h4>Start with document-heavy, high-frequency workflows</h4>
-          <p>Lease abstraction, invoice matching, and report compilation are high-volume, well-structured — ideal first deployments with measurable ROI.</p>
+          <p>Lease abstraction, invoice matching, and report compilation are high-volume and well-structured — ideal first deployments with measurable ROI and clear success criteria.</p>
         </div>
         <div class="principle">
           <span class="principle-num">02</span>
-          <h4>Prioritize clear inputs and measurable outputs</h4>
-          <p>Agents succeed where success is well-defined. Avoid vague "analysis" tasks. Start with: what does done look like, and how will we know it's right?</p>
+          <h4>Design the operation before you deploy the agent</h4>
+          <p>Agents succeed where success is well-defined. Map the workflow, clarify what "done" looks like, and establish the human review touchpoints before writing a single prompt.</p>
         </div>
         <div class="principle">
           <span class="principle-num">03</span>
-          <h4>Buy or configure before you build the agent layer</h4>
-          <p>The five-path framework applies to agents too. Most agentic use cases should augment existing systems rather than replace them from scratch.</p>
+          <h4>Let your path choice determine your agent architecture</h4>
+          <p>The five-path framework applies directly to agents. Buy determines which agents you get. Augment determines which agents you own. Build determines which agents no competitor can replicate.</p>
         </div>
         <div class="principle">
           <span class="principle-num">04</span>
           <h4>Define scope, escalation paths, and oversight upfront</h4>
-          <p>Treat agents as team members. They need defined authority, clear limits, and a human in the loop for decisions above their threshold.</p>
+          <p>Treat agents as team members with defined authority. Set clear boundaries, establish when they escalate to humans, and build in accountability structures from day one.</p>
         </div>
         <div class="principle">
           <span class="principle-num">05</span>
-          <h4>Invest in data plumbing before agent deployment</h4>
-          <p>Agents are only as good as their data inputs. A garbage-in, garbage-out agent creates confident wrong answers. Data quality is the prerequisite.</p>
+          <h4>Invest in data and API plumbing before agent deployment</h4>
+          <p>Agents are only as capable as their data inputs and action surfaces. Clean pipelines and structured APIs are the prerequisite — agentic systems amplify data quality problems, not just data quality benefits.</p>
         </div>
       </div>
     </div>
@@ -1726,7 +1744,7 @@
 
     <div class="insights-grid">
       <div class="insight-card">
-        <div class="insight-thumb" style="background: linear-gradient(135deg, #0f1e38 0%, #0d2d4a 100%);">
+        <div class="insight-thumb" style="background: linear-gradient(135deg, #e2eaf4 0%, #ccdaee 100%);">
           <span class="insight-type-tag">Deep Dive</span>
         </div>
         <div class="insight-body">
@@ -1741,7 +1759,7 @@
       </div>
 
       <div class="insight-card insight-sm">
-        <div class="insight-thumb" style="background: linear-gradient(135deg, #0e2218 0%, #0a2b1a 100%);">
+        <div class="insight-thumb" style="background: linear-gradient(135deg, #deeee5 0%, #cce3d4 100%);">
           <span class="insight-type-tag">Case Study</span>
         </div>
         <div class="insight-body">
@@ -1756,7 +1774,7 @@
       </div>
 
       <div class="insight-card insight-sm">
-        <div class="insight-thumb" style="background: linear-gradient(135deg, #1a0f2e 0%, #24143a 100%);">
+        <div class="insight-thumb" style="background: linear-gradient(135deg, #ece6f4 0%, #e0d4eb 100%);">
           <span class="insight-type-tag">Perspective</span>
         </div>
         <div class="insight-body">
@@ -1796,7 +1814,6 @@
           <div class="progress-fill" id="progressFill" style="width: 20%"></div>
         </div>
 
-        <!-- Q1 -->
         <div class="assessment-q active" id="q1">
           <div class="q-label">Question 1 of 5</div>
           <h3>What is the primary driver behind this technology decision?</h3>
@@ -1960,27 +1977,27 @@
       <div class="persona-card">
         <div class="persona-role">Head of Corporate Real Estate</div>
         <div class="persona-org">Fortune 500 Occupier</div>
-        <p>Managing a portfolio of 5M+ sq ft across 30+ countries. Facing pressure from the CFO to demonstrate AI ROI while avoiding another failed technology implementation.</p>
+        <p>Managing a portfolio of 5M+ sq ft across 30+ countries. Facing pressure from the CFO to demonstrate AI ROI while designing agentic workflows that don't create new operational risk.</p>
         <div class="persona-tags">
           <span class="persona-tag">Portfolio strategy</span>
-          <span class="persona-tag">Vendor governance</span>
+          <span class="persona-tag">Agentic operations</span>
           <span class="persona-tag">AI ROI</span>
         </div>
       </div>
       <div class="persona-card">
         <div class="persona-role">VP Technology &amp; Innovation</div>
         <div class="persona-org">Global Real Estate Service Firm</div>
-        <p>Responsible for the technology stack that brokers and clients depend on daily. Evaluating whether to build proprietary AI tools or deploy off-the-shelf platforms faster.</p>
+        <p>Responsible for the technology stack that brokers and clients depend on daily. Determining which agentic capabilities to buy, which to build, and where proprietary AI creates durable advantage.</p>
         <div class="persona-tags">
           <span class="persona-tag">Proptech evaluation</span>
-          <span class="persona-tag">Build vs. buy</span>
+          <span class="persona-tag">Agent architecture</span>
           <span class="persona-tag">Client tools</span>
         </div>
       </div>
       <div class="persona-card">
         <div class="persona-role">Chief Data Officer</div>
         <div class="persona-org">REIT / Real Assets Manager</div>
-        <p>Sitting at the intersection of real estate domain knowledge and data infrastructure. Determining what's worth building internally versus buying from a rapidly evolving vendor market.</p>
+        <p>Sitting at the intersection of real estate domain knowledge and data infrastructure. Building the data and API foundations that agentic operations depend on — and deciding what's worth owning vs. buying.</p>
         <div class="persona-tags">
           <span class="persona-tag">Data strategy</span>
           <span class="persona-tag">AI readiness</span>
@@ -2004,8 +2021,8 @@
     <div class="cta-block">
       <div class="cta-glow"></div>
       <span class="eyebrow">Get the Full Picture</span>
-      <h2>The Complete Decision Guide for AI-Era CRE</h2>
-      <p>The flagship guide covers all five paths in depth — with diagnostic criteria, case studies, common failure modes, and a decision matrix for your portfolio context.</p>
+      <h2>The Complete Decision Guide for Agentic-Era CRE</h2>
+      <p>The flagship guide covers all five paths in depth — with diagnostic criteria, agentic operations design frameworks, case studies, and a decision matrix for your portfolio context.</p>
       <div class="cta-buttons">
         <a href="#assessment" class="btn btn-gold" style="font-size:0.98rem; padding:15px 30px;">
           Take the Full Assessment
@@ -2109,34 +2126,34 @@
 
   const pathData = {
     buy: {
-      label: 'Buy', color: '#34c759', bg: 'rgba(52,199,89,0.1)',
+      label: 'Buy', color: '#197b3a', bg: 'rgba(25,123,58,0.1)',
       headline: 'Buy',
-      summary: "Your profile points toward adopting an established, proven platform with minimal customization. Your situation — whether it's the maturity of the vendor market, your current technical capacity, or the speed of your timeline — suggests that investing in custom development would create more risk than value right now. The goal is to get to value quickly and preserve your organizational energy for higher-leverage decisions.",
+      summary: "Your profile points toward adopting an established, proven platform with minimal customization. Your situation — whether it's the maturity of the vendor market, your current technical capacity, or the speed of your timeline — suggests that investing in custom development would create more risk than value right now. The goal is to get to agentic value quickly through existing platforms and preserve your energy for higher-leverage decisions.",
       signals: ['Vendor market has mature, proven solutions','Speed to value is the primary constraint','Technical capacity is limited or stretched','Use case is not a genuine differentiator']
     },
     config: {
-      label: 'Configure', color: '#3a7bd5', bg: 'rgba(58,123,213,0.1)',
+      label: 'Configure', color: '#1c5fa8', bg: 'rgba(28,95,168,0.1)',
       headline: 'Configure',
-      summary: "You're a strong candidate for deep platform configuration. A capable vendor platform exists that can serve as your foundation — but out-of-the-box won't fit. Your data model, process complexity, or organizational requirements justify investing in serious configuration and adaptation. Buy the engine; own the tuning. This path gives you speed-to-market without sacrificing fit.",
-      signals: ['Capable platforms exist but don\'t fit your workflows','You have moderate internal technical capacity','Data model is complex or has unique characteristics','Customization need is real but not differentiating']
+      summary: "You're a strong candidate for deep platform configuration. A capable vendor platform exists that can serve as your foundation — but out-of-the-box won't fit your operations. Your data model, process complexity, or agentic workflow requirements justify investing in serious configuration. Buy the engine; own the tuning. This path gives you speed-to-market without sacrificing operational fit.",
+      signals: ['Capable platforms exist but don\'t fit your workflows','You have moderate internal technical capacity','Data model is complex or has unique characteristics','Agentic customization need is real but not differentiating']
     },
     aug: {
-      label: 'Augment', color: '#c9a84c', bg: 'rgba(201,168,76,0.1)',
+      label: 'Augment', color: '#a87b20', bg: 'rgba(168,123,32,0.1)',
       headline: 'Augment',
-      summary: "You have the ingredients for a powerful hybrid strategy: existing platforms or infrastructure, valuable proprietary data, and enough technical capability to build AI layers on top. You don't need to build the full stack — and you shouldn't. Focus your development investment on the intelligence layer that leverages your unique data. Let vendors handle the commodity plumbing.",
-      signals: ['Proprietary data assets that vendors can\'t access','Existing infrastructure to build upon','Engineering capacity for targeted AI development','Differentiation is in interpretation, not plumbing']
+      summary: "You have the ingredients for a powerful hybrid agentic strategy: existing platforms, valuable proprietary data, and enough technical capability to build AI and agent layers on top. You don't need to build the full stack — and you shouldn't. Focus your development investment on the intelligence and orchestration layer that leverages your unique data. Let vendors handle the commodity plumbing.",
+      signals: ['Proprietary data assets that vendors can\'t access','Existing infrastructure to build agents on top of','Engineering capacity for targeted AI development','Differentiation is in the agent layer, not the plumbing']
     },
     build: {
-      label: 'Build', color: '#e05c5c', bg: 'rgba(224,92,92,0.1)',
+      label: 'Build', color: '#b83c3c', bg: 'rgba(184,60,60,0.1)',
       headline: 'Build',
-      summary: "Your profile suggests genuine conditions for proprietary development — a real competitive differentiator, proprietary data that vendors can't access, strong technical capacity, and a willingness to absorb the risk and timeline of a build. This is the rarest and most demanding path. Use it only if the differentiation is authentic, not assumed. The failure mode here is building something that vendors ship 18 months later.",
-      signals: ['Genuine competitive differentiation at stake','No vendor can adequately solve the problem','Strong internal technical capacity','High risk appetite with long-term ownership economics']
+      summary: "Your profile suggests genuine conditions for proprietary development — a real competitive differentiator, proprietary data that vendors can't access, strong technical capacity, and willingness to absorb the risk and timeline of a build. This is the rarest and most demanding path. Use it only when the agentic advantage is authentic, not assumed. The failure mode here is building something vendors ship as a feature 18 months later.",
+      signals: ['Genuine competitive differentiation at stake','No vendor can adequately solve the problem','Strong internal technical capacity including agent orchestration','High risk appetite with long-term ownership economics']
     },
     wait: {
-      label: 'Wait', color: '#8e8e9a', bg: 'rgba(142,142,154,0.1)',
+      label: 'Wait', color: '#6b6b78', bg: 'rgba(107,107,120,0.1)',
       headline: 'Strategic Patience',
-      summary: "Your situation — whether it's data unreadiness, market immaturity, organizational capacity, or risk posture — points toward deliberate deferral. This isn't a failure. Waiting is a valid strategic path when executed intentionally. Define what conditions would end the wait, invest in your data foundation in the interim, and assign accountability to monitor the space. Don't let waiting become drift.",
-      signals: ['Market is nascent or consolidating','Data foundation isn\'t ready for AI','Organizational change capacity is constrained','Risk appetite favors letting others absorb early risk']
+      summary: "Your situation — whether it's data unreadiness, market immaturity, organizational capacity, or risk posture — points toward deliberate deferral. This isn't a failure. Waiting is a valid strategic path when executed intentionally. Define what conditions would end the wait, invest in your data and API foundations in the interim, and assign accountability to monitor the agentic landscape. Don't let waiting become drift.",
+      signals: ['Market is nascent or consolidating','Data foundation isn\'t ready for agentic workflows','Organizational change capacity is constrained','Risk appetite favors letting others absorb early risk']
     }
   };
 
@@ -2201,10 +2218,10 @@
     });
   }, { threshold: 0.1 });
 
-  document.querySelectorAll('.problem-item, .path-card, .insight-card, .persona-card, .metric, .agent-use-case, .principle').forEach((el, i) => {
+  document.querySelectorAll('.path-card, .persona-card, .insight-card, .principle, .agent-use-case').forEach(el => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(14px)';
-    el.style.transition = `opacity 0.5s ease ${i * 0.05}s, transform 0.5s ease ${i * 0.05}s`;
+    el.style.transform = 'translateY(12px)';
+    el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
     io.observe(el);
   });
 </script>
